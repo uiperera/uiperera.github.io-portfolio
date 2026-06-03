@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Developer Journey</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- React CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.22.5/babel.min.js"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <div id="root"></div>
+
+  <script type="text/babel">
+    function Section({ title, children }) {
+      return (
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold mb-4 text-blue-600 border-b pb-2">
+            {title}
+          </h2>
+          <div className="space-y-4 text-lg leading-8">
+            {children}
+          </div>
+        </section>
+      );
+    }
+
+    function App() {
+      return (
+        <div className="min-h-screen py-10 px-5">
+          <div className="max-w-5xl mx-auto bg-white shadow-2xl rounded-3xl overflow-hidden">
+
+            {/* Hero Section */}
+            <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-10 md:p-16">
+              <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
+                Building, Breaking, and Learning
+              </h1>
+              <p className="text-xl md:text-2xl opacity-90">
+                My Journey as a Developer
+              </p>
+            </div>
+
+            {/* Content */}
+            <div className="p-8 md:p-14">
+
+              <Section title="Introduction">
+                <p>
+                  Technology has always fascinated me, not just because of what it can do,
+                  but because of how it solves real-world problems. My journey as a developer
+                  started with curiosity - experimenting with code, understanding how websites
+                  work, and learning how software can turn ideas into something people actually use.
+                </p>
+
+                <p>
+                  Today, I continue to grow as a developer by building projects, exploring new
+                  technologies, debugging challenging problems, and constantly learning from every
+                  experience. For me, development is more than writing code. It is about creating
+                  solutions, improving systems, and becoming better every single day.
+                </p>
+              </Section>
+
+              <Section title="How I Started">
+                <p>
+                  Like many developers, I started small.
+                </p>
+
+                <p>
+                  At first, it was simple experiments editing web pages, learning basic
+                  programming concepts, and trying to understand how applications communicate
+                  with databases and servers. Over time, that curiosity evolved into a deeper
+                  passion for software development.
+                </p>
+
+                <div>
+                  <h3 className="text-2xl font-semibold mb-3">I began exploring:</h3>
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>Web development</li>
+                    <li>Backend systems</li>
+                    <li>Database management</li>
+                    <li>API integrations</li>
+                    <li>Payment gateway implementations</li>
+                    <li>Frontend UI development</li>
+                    <li>AI and local model experimentation</li>
+                  </ul>
+                </div>
+              </Section>
+
+              <Section title="What I Work With">
+                <div>
+                  <h3 className="text-2xl font-semibold mb-3 text-indigo-600">
+                    Frontend Development
+                  </h3>
+
+                  <p>
+                    I enjoy building responsive and interactive interfaces that provide a smooth
+                    user experience.
+                  </p>
+
+                  <div className="flex flex-wrap gap-3 mt-4">
+                    {['HTML', 'CSS', 'JavaScript', 'React'].map((tech) => (
+                      <span
+                        key={tech}
+                        className="bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-medium"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="mt-8">
+                  <h3 className="text-2xl font-semibold mb-3 text-indigo-600">
+                    Backend Development
+                  </h3>
+
+                  <p>
+                    Backend development is where I enjoy solving logic-heavy problems.
+                  </p>
+
+                  <div className="flex flex-wrap gap-3 mt-4">
+                    {['PHP', 'MySQL', 'API Integrations', 'Authentication Systems', 'Payment Gateways'].map((tech) => (
+                      <span
+                        key={tech}
+                        className="bg-green-100 text-green-700 px-4 py-2 rounded-full font-medium"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </Section>
+
+              <Section title="My Development Mindset">
+                <p>
+                  One thing development has taught me is that learning never stops.
+                </p>
+
+                <p>
+                  Technology changes constantly, and every challenge becomes an opportunity to grow.
+                  I believe strong developers are not the ones who know everything, but the ones
+                  who are willing to keep learning and adapting.
+                </p>
+
+                <div className="grid md:grid-cols-2 gap-5 mt-6">
+                  {[
+                    'Writing clean and maintainable code',
+                    'Understanding problems before solving them',
+                    'Learning from mistakes',
+                    'Improving performance and usability',
+                    'Building practical solutions',
+                    'Continuous learning'
+                  ].map((item) => (
+                    <div
+                      key={item}
+                      className="bg-gray-50 border border-gray-200 p-5 rounded-2xl shadow-sm"
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </Section>
+
+              <Section title="Projects and Experience">
+                <p>
+                  Over time, I have worked on different types of projects that helped strengthen my skills.
+                </p>
+
+                <div className="grid md:grid-cols-2 gap-4 mt-6">
+                  {[
+                    'Donation and payment systems',
+                    'Database-driven web applications',
+                    'Portfolio websites',
+                    'Dynamic admin panels',
+                    'Frontend user interfaces',
+                    'API-based integrations'
+                  ].map((project) => (
+                    <div
+                      key={project}
+                      className="bg-indigo-50 border border-indigo-100 p-5 rounded-2xl"
+                    >
+                      {project}
+                    </div>
+                  ))}
+                </div>
+              </Section>
+
+              <Section title="Why I Love Development">
+                <p>
+                  What excites me most about development is the ability to create something meaningful from an idea.
+                </p>
+
+                <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 mt-6">
+                  {[
+                    'A Website',
+                    'A Management System',
+                    'A Business Solution',
+                    'An Automation Tool',
+                    'A Helpful Platform',
+                    'A Real-World Solution'
+                  ].map((item) => (
+                    <div
+                      key={item}
+                      className="bg-blue-50 p-5 rounded-2xl text-center font-semibold shadow-sm"
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </Section>
+
+              <Section title="My Goals">
+                <ul className="list-disc pl-6 space-y-3">
+                  <li>Improve my full-stack development skills</li>
+                  <li>Build scalable and professional applications</li>
+                  <li>Learn advanced backend architecture</li>
+                  <li>Explore AI and modern software technologies</li>
+                  <li>Contribute to impactful projects</li>
+                  <li>Grow into a stronger software engineer</li>
+                </ul>
+              </Section>
+
+              <Section title="Final Thoughts">
+                <p>
+                  Being a developer is not just about coding.
+                </p>
+
+                <p>
+                  It is about persistence, creativity, problem-solving, and the willingness to
+                  keep learning even when things become difficult.
+                </p>
+
+                <p>
+                  Every bug fixed, every project completed, and every new concept learned becomes
+                  part of the journey.
+                </p>
+
+                <p className="font-semibold text-xl text-indigo-700">
+                  I am still learning, still building, and still growing - and that is what makes this journey exciting.
+                </p>
+              </Section>
+
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+
+</body>
+</html>

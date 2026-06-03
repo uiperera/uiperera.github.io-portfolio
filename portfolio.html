@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Developer Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const { useState } = React;
+
+      const projects = [
+        {
+          title: "Help Schools Platform",
+          description:
+            "A full-stack platform developed to support schools with donations, volunteer coordination, and event management.",
+          tech: ["PHP", "MySQL", "JavaScript", "Bootstrap"],
+          github: "https://github.com/uiperera/helpschoolslk_Folked",
+        },
+        {
+          title: "Event Management System",
+          description:
+            "An event scheduling and ticketing system with QR code generation and real-time event management features.",
+          tech: ["PHP", "jQuery", "MySQL", "HTML", "CSS"],
+          github: "https://github.com/uiperera/helpschoolslk_Folked",
+        },
+        {
+          title: "AI Goal Planning App",
+          description:
+            "A smart productivity and goal-planning mobile application powered by AI-driven scheduling and habit tracking.",
+          tech: ["Python", "AI"],
+          github: "https://github.com/uiperera/Intelligent-Study-Planner-",
+        },
+      ];
+
+      const skills = [
+        "JavaScript",
+        "React",
+        "PHP",
+        "MySQL",
+        "HTML",
+        "CSS",
+        "Bootstrap",
+        "Git",
+        "REST APIs",
+      ];
+
+      const blogs = [
+        {
+          title: "Building, Breaking, and Learning:My Journey as a Developer",
+          description:
+            "A deep dive into structuring scalable web applications using PHP and MySQL, with practical examples.",
+          date: "March 2, 2026",
+          link: "my-journey.html",
+        },
+        // {
+        //   title: "Getting Started with React Native",
+        //   description:
+        //     "Everything I learned building my first cross-platform mobile app with React Native and Firebase.",
+        //   date: "February 5, 2026",
+        //   link: "#",
+        // },
+        // {
+        //   title:
+        //     "AI-Powered Productivity: Lessons from Building a Goal Planner",
+        //   description:
+        //     "How I integrated AI scheduling into a habit-tracking app and what I'd do differently next time.",
+        //   date: "January 20, 2026",
+        //   link: "#",
+        // },
+      ];
+
+      function App() {
+        return (
+          <div>
+            {/* NAV */}
+            <nav>
+              <div className="nav-logo">
+                <span></span>Isurindi Perera
+              </div>
+              <div className="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#blogs">Blogs</a>
+                <a href="#contact">Contact</a>
+              </div>
+            </nav>
+
+            {/* HERO */}
+            <section className="hero">
+              <div className="hero-content">
+                <div className="hero-tag">Full Stack Developer with interest in AI-powered systems and scalable web applications</div>
+                <h2>Building modern web &amp; AI applications.</h2>
+                <p>
+                  I'm a developer passionate about full-stack development and AI
+                  systems — crafting tools that are fast, purposeful, and built
+                  to last.
+                </p>
+                <div className="hero-btns">
+                  <a
+                    className="btn-primary"
+                    href="https://github.com/uiperera"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    GitHub
+                  </a>
+                  <a
+                    className="btn-outline"
+                    href="https://www.linkedin.com/in/isurindi-perera"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    LinkedIn
+                  </a>
+                </div>
+              </div>
+
+              <div className="hero-visual">
+                <div className="orb-ring"></div>
+                <div className="orb">&lt;/&gt;</div>
+              </div>
+            </section>
+
+            {/* ABOUT */}
+            <section id="about">
+              <div className="section-label">01 — About</div>
+              <h3 className="section-title">About Me</h3>
+              <p className="about-text">
+                I build <strong>full-stack applications</strong> and enjoy
+                working with modern web technologies. I care about writing clean,
+                maintainable code that solves real problems. Always learning,
+                always improving.
+              </p>
+            </section>
+
+            {/* BLOGS */}
+            <section id="blogs">
+              <div className="section-label">01 — Blogs</div>
+              <h3 className="section-title">My Blogs</h3>
+
+              <p className="blogs-text">
+                I build <strong>full-stack applications</strong> and enjoy
+                working with modern web technologies. I care about writing clean,
+                maintainable code that solves real problems. Always learning,
+                always improving.
+              </p>
+
+              <div className="blogs-grid">
+                {blogs.map((blog, index) => (
+                  <div key={index} className="blog-card">
+                    <h4>{blog.title}</h4>
+                    <p>{blog.description}</p>
+                    <small>{blog.date}</small>
+                    <br />
+                    <a href={blog.link}>Read more →</a>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* PROJECTS */}
+            <section id="projects">
+              <div className="section-label">02 — Work</div>
+              <h3 className="section-title">Projects</h3>
+              <div className="projects-grid">
+                {projects.map((p, i) => (
+                  <div className="project-card" key={i}>
+                    <div className="project-num">
+                      Project {String(i + 1).padStart(2, "0")}
+                    </div>
+                    <div className="project-title">{p.title}</div>
+                    <p className="project-desc">{p.description}</p>
+                    <div className="tech-tags">
+                      {p.tech.map((t, j) => (
+                        <span className="tech-tag" key={j}>
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                    <a
+                      className="project-link"
+                      href={p.github}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      View Project →
+                    </a>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* SKILLS */}
+            <section id="skills">
+              <div className="section-label">03 — Stack</div>
+              <h3 className="section-title">Skills</h3>
+              <div className="skills-grid">
+                {skills.map((s, i) => (
+                  <span className="skill-chip" key={i}>
+                    {s}
+                  </span>
+                ))}
+              </div>
+            </section>
+
+            <section id="contact">
+              <div className="section-label">04 — Contact</div>
+              <h3 className="section-title">Get In Touch</h3>
+              <div className="contact-inner">
+                <p className="contact-text">
+                  Have a project in mind or want to collaborate? I'm always open
+                  to discussing new opportunities and interesting ideas.
+                </p>
+                <a className="btn-primary" href="mailto:pereraisurindi@gmail.com">
+                  Email Me
+                </a>
+              </div>
+            </section>
+
+            <footer>© 2026 Isurindi Perera</footer>
+          </div>
+        );
+      }
+
+      ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+    </script>
+  </body>
+</html>
